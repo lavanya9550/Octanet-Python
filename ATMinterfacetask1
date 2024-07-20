@@ -1,0 +1,128 @@
+===================PYTHON DEVELOPMENT TASK==================
+**************************************************
+PROBLEM:ATM INTERFACE
+**************************************************
+The ATMs in our cities are built on Python, as we have all seen them.
+It is a console-based application with five different classes. 
+In order to use the system, the user must enter his or her user ID and pin when it starts.
+Once the details are entered successfully, ATM functionality is unlocked. As a result of the project, the following operations can be performed:
+
+*Transactions History
+*Withdraw
+*Deposit
+*Transfer
+*Quit
+____________________________________________________________________________________________________________________________________________________________________
+************
+SOURCE CODE
+************
+______________________________________________________________________________________________________________________________________________________________________
+
+import time 
+
+print("Please insert your CARD")
+
+Password=1234
+
+pin=int(input("Enter your pin:"))
+
+balance=5000
+
+if pin==Password:
+
+    while True:
+
+        print("""
+          1==balance
+          2==withdraw balance
+          3==deposit balance
+          4==exit
+          """
+          )
+
+        try:
+
+            option=int(input("Please enter your choice : "))
+
+        except:
+
+            print("please enter valid option:")
+
+        if option==1:
+
+            print(f"Your current balance is :{balance}")
+
+        if option==2: 
+
+            withdraw_amount=int(input("please enter withdraw_amount: "))
+
+            if withdraw_amount>balance:
+
+                print(f"insufficient balance")
+
+            else:    
+
+                balance=balance-withdraw_amount
+               
+            print(f"{withdraw_amount} is debited from your account") 
+
+            print(f"your current balance is :{balance}")
+
+        if option==3:
+
+            deposit_amount=int(input("please enter deposit_amount:"))
+
+            balance=balance+deposit_amount
+
+            print(f"{deposit_amount} is credited to your account")
+
+            print(f"your updated balance is :{balance}")
+            
+        if option==4:
+            break     
+else:
+    print("wrong pin please try again")
+_______________________________________________________________________________________________________________________________________________________________________
+
+
+**********************************************
+OUPPUT:
+**********************************************
+Please insert your CARD
+Enter your pin:1234
+
+          1==balance
+          2==withdraw balance
+          3==deposit balance
+          4==exit
+
+Please enter your choice : 1
+Your current balance is :5000
+
+          1==balance
+          2==withdraw balance
+          3==deposit balance
+          4==exit
+
+Please enter your choice : 2
+please enter withdraw_amount: 3000
+3000 is debited from your account
+your current balance is :2000
+
+          1==balance
+          2==withdraw balance
+          3==deposit balance
+          4==exit
+
+Please enter your choice : 3
+please enter deposit_amount:1000
+1000 is credited to your account
+your updated balance is :3000
+
+          1==balance
+          2==withdraw balance
+          3==deposit balance
+          4==exit
+
+Please enter your choice : 4
+PS D:\python>
